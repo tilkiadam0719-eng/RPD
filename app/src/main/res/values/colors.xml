@@ -1,0 +1,9 @@
+<resources>
+    <color name="rpd_bg">#08090C</color>
+    <color name="rpd_surface">#12151B</color>
+    <color name="rpd_surface2">#191D25</color>
+    <color name="rpd_text">#F5F7FA</color>
+    <color name="rpd_muted">#9BA3B0</color>
+    <color name="rpd_accent">#8B5CF6</color>
+    <color name="rpd_accent2">#22D3EE</color>
+</resources>

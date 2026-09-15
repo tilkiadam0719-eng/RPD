@@ -23,7 +23,7 @@ jobs:
     
 
       - name: SDK paketlerini kur
-        run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+        run: run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Gradle kur
         uses: gradle/actions/setup-gradle@v4

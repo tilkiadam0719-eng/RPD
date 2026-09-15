@@ -23,19 +23,21 @@ jobs:
     
 
       - name: SDK paketlerini kur
-        run: run: yes | run: |
-  yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+            - name: SDK paketlerini kur
+            run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0"      
+
+
 
       - name: Gradle kur
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: '8.10.2'
+        uses : gradle /actions/setup-gradle@v4
+        ile :
+          gradle-sürümü : '8.10.2'
 
-      - name: APK oluştur
-        run: gradle assembleDebug --no-daemon
+      - isim : APK 
+        Çalıştır : gradle assembleDebug --no-daemon
 
-      - name: APK'yi yükle
-        uses: actions/upload-artifact@v4
-        with:
-          name: RPD-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+      - name : APK 'yi yükle
+        uses : actions/upload-artifact@v4
+        ile :
+          adı : RPD-debug-apk
+          yol : app/build/outputs/apk/debug/app-debug.apk

@@ -22,7 +22,13 @@ jobs:
 
       - name: SDK paketlerini kur
         shell: bash
+        run: |      - name: SDK paketlerini kur
+        shell: bash
         run: |
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          SDKMANAGER="$SDK/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses || true
+          "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
           SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
           SDKMANAGER="$SDK/cmdline-tools/latest/bin/sdkmanager"
           yes | "$SDKMANAGER" --licenses
